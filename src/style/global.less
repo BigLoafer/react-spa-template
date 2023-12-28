@@ -1,0 +1,104 @@
+/* 全局配置 */
+* {
+    -webkit-overflow-scrolling: touch;
+    /* 允许独立滚动区域，解决IOS上的非body元素滚动条滚动时卡顿 */
+    -webkit-tap-highlight-color: transparent;
+    /* 覆盖IOS上用户点击连接时的默认高亮颜色 */
+    outline: none;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    letter-spacing: 0.3px !important;
+    background-color: #fff;
+    -ms-touch-action: manipulation;
+    /* 允许触摸驱动的平移和拖拽缩放 */
+    touch-action: manipulation;
+    /* 允许触摸驱动的平移和拖拽缩放 */
+    -webkit-text-size-adjust: 100%;
+    /* 关闭IOS横屏时，自动调整字体大小的功能 */
+    font-family: Mulish-Regular, Mulish !important;
+    font-size: 14px;
+    scroll-behavior: smooth;
+    /* 平滑滚动 */
+}
+
+ul {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 0 !important;
+}
+
+/* ul样式重置 */
+li {
+    position: relative;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* li样式重置 */
+img {
+    border: 0;
+}
+
+input {
+    line-height: normal;
+}
+
+img,
+a:focus,
+a:hover,
+a:active {
+    outline: none;
+}
+
+label {
+    cursor: pointer;
+}
+
+sub,
+sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+
+/* 重新定义上标和下标的表现 */
+sup {
+    top: -0.5em;
+}
+
+sub {
+    bottom: -0.25em;
+}
+
+button {
+    border: none;
+}
+
+/* 美化滚动条 */
+/* ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+    background-color: transparent;
+} */
+
+/*定义滑块 内阴影+圆角*/
+/* ::-webkit-scrollbar-thumb {
+    background-color: #333;
+} */
+
+/* ::-webkit-scrollbar-track {
+    background: linear-gradient(90deg, #201c29, #201c29 1px, #100e17 0, #100e17);
+} */
+
+body.modal-open {
+    position: fixed;
+    overflow-y: hidden;
+    width: 100%;
+}
