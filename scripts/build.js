@@ -55,6 +55,7 @@ const genProjectConfig = (project, environment, buildDir) => ({
                     },
                     compress: {
                         ecma: 5,
+                        drop_console: true,
                         warnings: false,
                         comparisons: false,
                         inline: 2
