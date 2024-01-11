@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Route, withRouter } from "react-router-dom";
+import CacheRoute from "react-router-cache-route";
 import { useStores } from "@/store";
 
 const PrivateRoute = props => {
@@ -18,7 +19,7 @@ const PrivateRoute = props => {
     };
 
     const { component: Component, ...rest } = props;
-    return afterLoading ? <Route {...rest} render={renderComponent} /> : null;
+    return afterLoading ? <CacheRoute {...rest} cacheKey={rest.path} render={renderComponent} /> : null;
 };
 
 export default withRouter(PrivateRoute);

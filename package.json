@@ -13,6 +13,7 @@
         "react": "^18.2.0",
         "react-app-polyfill": "^3.0.0",
         "react-dom": "^18.2.0",
+        "react-router-cache-route": "^1.12.11",
         "react-router-dom": "^5.3.4",
         "vconsole": "^3.13.0"
     },

@@ -1,5 +1,6 @@
 import React, { Suspense } from "react";
 import { BrowserRouter as Router, Switch, Redirect } from "react-router-dom";
+import { CacheSwitch } from "react-router-cache-route";
 import { Provider, observer } from "mobx-react";
 import pageRoutes from "../route/routes";
 import MyRoute from "../route";
@@ -9,6 +10,7 @@ import { baseName } from "@/config";
 import * as modules from "./index";
 import HttpLoading from "@/components/HttpLoading";
 
+const needCachePage = [];
 let injectStores = { rootStore };
 
 Object.keys(modules).forEach(moduleKey => {
@@ -31,10 +33,12 @@ const App = () => {
                 <div>
                     <HttpLoading show={showLoading} />
                     <Suspense fallback={<Loading />}>
-                        <Switch>
+                        <CacheSwitch which={el => needCachePage.includes(el.props?.path)}>
+                            {/* <Switch> */}
                             {renderRoutes(pageRoutes)}
                             <Redirect to="/" />
-                        </Switch>
+                            {/* </Switch> */}
+                        </CacheSwitch>
                     </Suspense>
                 </div>
             </Router>
